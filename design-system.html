@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./resources/css/styles.css" />
+
+    <!-- Fonts -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@400;500;700;900&family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Title & Icon -->
+    <title>Tom O'Connell | Web Developer</title>
+
+    <!-- Javascript -->
+    <script src="./resources/javascript/main.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Scheme picker -->
+
+      <section id="theme-picker" style="margin: 4rem 0">
+        <h2 class="numbered-title"><span>01</span> Theme Picker</h2>
+        <div class="bg-accent" style="padding: 2rem 0; border-radius: 15px">
+          <form class="color-picker" action="">
+            <fieldset>
+              <legend class="sr-only">Pick a colour scheme</legend>
+              <label for="theme1" class="sr-only">Theme 1</label>
+              <input type="radio" name="theme" id="theme1" checked />
+
+              <label for="theme2" class="sr-only">Theme 2</label>
+              <input type="radio" name="theme" id="theme2" />
+
+              <label for="theme3" class="sr-only">Theme 3</label>
+              <input type="radio" name="theme" id="theme3" />
+            </fieldset>
+          </form>
+        </div>
+      </section>
+
+      <!-- Logo & title -->
+
+      <section id="logo" style="margin: 4rem 0">
+        <h2 class="numbered-title"><span>02</span> Logo & Title</h2>
+
+        <div class="bg-black grid" style="padding: 2rem 0; border-radius: 15px">
+          <img class="logo" alt="Logo">
+          <p
+                class="fs-800 ff-bubble text-f-light"
+                style="text-align: center;"
+              >
+                Tom O'Connell
+              </p>
+
+
+        </div>
+
+      
+      </section>
+
+      <!-- Colors -->
+
+      <section id="colors" style="margin: 4rem 0">
+        <h2 class="numbered-title"><span>03</span> colors</h2>
+        <!-- Color scheme 1 -->
+        <div class="flex">
+          <div style="flex-grow: 1">
+            <div
+              style="padding: 3rem 1rem 1rem; border: 1px solid black; border-radius: 5px;"
+              class="bg-black uppercase text-white"
+            ></div>
+          </div>
+
+          <div style="flex-grow: 1">
+            <div
+              style="padding: 3rem 1rem 1rem; border: 1px solid black; border-radius: 5px;"
+              class="bg-white text-dark uppercase"
+            ></div>
+          </div>
+
+          <div style="flex-grow: 1">
+            <div
+              style="padding: 3rem 1rem 1rem; border: 1px solid black; border-radius: 5px;"
+              class="bg-accent text-dark uppercase"
+            ></div>
+          </div>
+
+          <div style="flex-grow: 1">
+            <div
+              style="padding: 3rem 1rem 1rem; border: 1px solid black; border-radius: 5px;"
+              class="bg-f-light uppercase"
+            ></div>
+          </div>
+
+          <div style="flex-grow: 1">
+            <div
+              style="padding: 3rem 1rem 1rem; border: 1px solid black; border-radius: 5px;"
+              class="bg-f-dark uppercase"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Typography  -->
+
+      <section id="typography" style="margin: 4rem 0">
+        <h2 class="numbered-title"><span>04 </span>Typography</h2>
+        <div class="flex" style="gap: 6rem;">
+          <div class="flow" style="flex-basis: 100%; --flow-space: 4rem">
+            <div>
+              <p class="text-accent">Heading 1 - Shrikhand - 100px</p>
+              <p
+                class="fs-800 ff-bubble bg-black text-f-light"
+                style="border-radius: 15px; padding: 2rem"
+              >
+                Tom O'Connell
+              </p>
+            </div>
+            <div>
+              <p class="text-accent">Heading 2 - Roboto Condensed - 80px</p>
+              <p
+                class="fs-800 ff-roboto-cond bg-accent text-f-light"
+                style="border-radius: 15px; padding: 2rem"
+              >
+                Development
+              </p>
+            </div>
+            <div>
+              <p class="text-accent">
+                Heading 3 - Roboto Condensed - 56px - 4.75px Character Space
+              </p>
+              <p
+                class="text-f-dark bg-f-light fs-700 ff-roboto-cond letter-spacing-1"
+                style="border-radius: 15px; padding: 2rem"
+              >
+                Things I'm great at
+              </p>
+            </div>
+          </div>
+
+          <div class="flow" style="flex-basis: 100%; --flow-space: 4rem">
+            <div>
+              <p class="text-accent">Accent Text - Indie Flower - 32px</p>
+              <p class="fs-600 ff-flower">So happy to see you!</p>
+            </div>
+            <div>
+              <p class="text-accent">
+                Footer Text - Roboto Condensed - 16px - 2.75px Character Space
+              </p>
+              <p class="fs-400 ff-roboto-cond uppercase letter-spacing-2">
+                © Twoconnell.com 2022
+              </p>
+            </div>
+            <div>
+              <p class="text-accent">Body Text</p>
+              <p style="text-align: justify">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
+                neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium,
+                ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+                eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo.
+                Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer
+                adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh
+                nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel,
+                nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor
+                libero sodales leo, eget blandit nunc tortor eu nibh. Nullam
+                mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit
+                amet, consectetuer adipiscing elit. Phasellus hendrerit.
+                Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel,
+                dapibus id, mattis vel, nisi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

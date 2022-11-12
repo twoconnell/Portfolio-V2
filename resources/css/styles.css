@@ -1,0 +1,286 @@
+/* -------------------------------------------------------------------------------------------- */
+/* Custom Properties                                                                            */
+/* -------------------------------------------------------------------------------------------- */
+
+:root {
+  /* colors */
+
+  /* Initial color theme colors for theme 1 (default them) and colored logo */
+
+  --logo: url(../images/theme1-logo.png);
+
+  --clr-black: 220 5% 13%;
+  --clr-white: 5 26% 92%;
+  --clr-accent: 4 27% 64%;
+  --clr-f-light: 194 88% 78%;
+  --clr-f-dark: 203 94% 54%;
+
+  --clr1-radio: 194 88% 78%;
+  --clr2-radio: 50 98% 68%;
+  --clr3-radio: 18 100% 80%;
+
+
+  /* font-sizes */
+
+  --fs-900: 6.25rem;
+  --fs-800: 5rem;
+  --fs-700: 3.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1rem;
+  --fs-300: 0.875rem;
+
+  /* font-families */
+
+  --ff-bubble: 'Shrikhand', serif;
+  --ff-flower: 'Indie Flower', cursive;
+  --ff-roboto: 'Roboto', sans-serif;
+  --ff-roboto-cond: 'Roboto Condensed', sans-serif;
+
+
+
+}
+
+
+/* -------------------------------------------------------------------------------------------- */
+/* Reset                                                                                        */
+/* -------------------------------------------------------------------------------------------- */
+
+/* Box sizing */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/*  Reset margins */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+  font-weight: 400;
+}
+
+/*  Set up the body */
+
+body {
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-400);
+  color: hsl( var(--clr-black));
+  background-color: hsl( var(--clr-white));
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Make images easier to work with */
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Make form elements easier to work with */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove animations for people who've turned them off */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* -------------------------------------------------------------------------------------------- */
+/* Utility classes                                                                              */
+/* -------------------------------------------------------------------------------------------- */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 80rem; 
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/* -------------------------------------------------------------------------------------------- */
+/* Style classes                                                                                */
+/* -------------------------------------------------------------------------------------------- */
+
+/* Colors */
+
+.bg-black { background-color: hsl( var(--clr-black)); }
+.bg-white { background-color: hsl( var(--clr-white)); }
+.bg-accent { background-color: hsl( var(--clr-accent)); }
+.bg-f-light { background-color: hsl( var(--clr-f-light)); }
+.bg-f-dark { background-color: hsl( var(--clr-f-dark)); }
+
+.text-black { color: hsl( var(--clr-black)); }
+.text-white { color: hsl( var(--clr-white)); }
+.text-accent { color: hsl( var(--clr-accent)); }
+.text-f-light { color: hsl( var(--clr-f-light)); }
+.text-f-dark { color: hsl( var(--clr-f-dark)); }
+
+
+/* Font Families */
+
+.ff-bubble { font-family: var(--ff-bubble);}
+.ff-flower { font-family: var(--ff-flower);}
+.ff-roboto { font-family: var(--ff-roboto); }
+.ff-roboto-cond { font-family: var(--ff-roboto-cond); }
+
+/* Font sizes */
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+
+/* Letter / Line Spacing / Caps */
+
+.letter-spacing-1 { letter-spacing: 4.75px; }
+.letter-spacing-2 { letter-spacing: 2.75px; }
+.letter-spacing-3 { letter-spacing: 2.35px; }
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+  line-height: 1.1;
+}
+
+.uppercase { text-transform: uppercase; }
+
+/* Design system titles */
+
+.numbered-title {
+  font-family: var(--ff-roboto-cond);
+  font-size: var(--fs-500);
+  letter-spacing: 4.72px;
+  text-transform: uppercase;
+}
+
+.numbered-title span {
+  margin-right: 0.5em;
+  font-weight: 700;
+  color: hsl(var(--clr-accent) / 0.75);
+}
+
+
+/* -------------------------------------------------------------------------------------------- */
+/* Color picker                                                                                 */
+/* -------------------------------------------------------------------------------------------- */
+
+/* Style form */
+.color-picker > fieldset {
+  border: 0;
+  display: flex;
+  gap: 4rem;
+  width: fit-content;
+  padding: 1rem 2rem;
+  margin-inline: auto;
+  border-radius: 2rem;
+}
+
+/* Style radio boxes */
+.color-picker input[type="radio"] {
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  outline: 3px solid var(--radio-color, currentColor);
+  outline-offset: 3px;
+  border-radius: 50%;
+}
+
+/* Fills in checked radio */
+.color-picker input[type="radio"]:checked { background-color: var(--radio-color); }
+
+/* Radio colors */
+.color-picker input[type="radio"]#theme1 { --radio-color: hsl(var(--clr1-radio)); }
+.color-picker input[type="radio"]#theme2 { --radio-color: hsl(var(--clr2-radio)); }
+.color-picker input[type="radio"]#theme3 { --radio-color: hsl(var(--clr3-radio)); }
+
+/* Color theme 1 styles*/
+.theme1,
+:root:has(#theme1:checked) {
+  --clr-black: 220 5% 13%;
+  --clr-white: 5 26% 92%;
+  --clr-accent: 4 27% 64%;
+  --clr-f-light: 194 88% 78%;
+  --clr-f-dark: 203 94% 54%;
+  --logo: url(../images/theme1-logo.png)
+}
+
+/* Color theme 2 styles*/
+.theme2,
+:root:has(#theme2:checked) {
+  --clr-black: 220 5% 11%; 
+  --clr-white: 98 26% 92%; 
+  --clr-accent: 116 27% 64%; 
+  --clr-f-light: 50 98% 68%; 
+  --clr-f-dark: 31 97% 59%;
+  --logo: url(../images/theme2-logo.png);
+}
+
+/* Color theme 3 styles*/
+.theme3,
+:root:has(#theme3:checked) {
+  --clr-black: 60 100% 4%;
+  --clr-white: 59 100% 92%;
+  --clr-accent: 356 79% 72%;
+  --clr-f-light: 18 100% 80%;
+  --clr-f-dark: 225 41% 29%;
+  --logo: url(../images/theme3-logo.png)
+}
+
+.logo {
+  content: var(--logo);
+  max-height: 20rem;
+  margin-inline: auto;
+}
+
