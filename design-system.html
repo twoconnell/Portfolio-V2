@@ -23,10 +23,46 @@
 
   <body>
     <div class="container">
-      <!-- Scheme picker -->
+      <!-- Logo & title -->
+
+      <section id="logo" style="margin: 4rem 0">
+        <h2 class="numbered-title"><span>01</span> Logo & Title</h2>
+
+        <div class="bg-black grid" style="padding: 2rem 0; border-radius: 15px">
+          <img class="logo" alt="Logo" />
+          <p class="fs-800 ff-bubble text-f-light" style="text-align: center">
+            Tom O'Connell
+          </p>
+          <div class="flex social-icons">
+            <div class="social-icon">
+              <a
+                href="#"
+                onclick='window.open("https://github.com/twoconnell");return false;'
+              >
+                <img class="github-icon" alt="Github" />
+              </a>
+            </div>
+            <div class="social-icon">
+              <a
+                href="#"
+                onclick='window.open("https://www.linkedin.com/in/tom-o-connell-8a2480251/");return false;'
+              >
+                <img class="linkedin-icon" alt="LinkedIn"
+              /></a>
+            </div>
+            <div class="social-icon">
+              <a href="mailto:tw.oconnell@icloud.com?subject=Loved your website!">
+                <img class="email-icon" alt="Email"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Theme picker -->
 
       <section id="theme-picker" style="margin: 4rem 0">
-        <h2 class="numbered-title"><span>01</span> Theme Picker</h2>
+        <h2 class="numbered-title"><span>02</span> Theme Picker</h2>
         <div class="bg-accent" style="padding: 2rem 0; border-radius: 15px">
           <form class="color-picker" action="">
             <fieldset>
@@ -44,63 +80,62 @@
         </div>
       </section>
 
-      <!-- Logo & title -->
-
-      <section id="logo" style="margin: 4rem 0">
-        <h2 class="numbered-title"><span>02</span> Logo & Title</h2>
-
-        <div class="bg-black grid" style="padding: 2rem 0; border-radius: 15px">
-          <img class="logo" alt="Logo">
-          <p
-                class="fs-800 ff-bubble text-f-light"
-                style="text-align: center;"
-              >
-                Tom O'Connell
-              </p>
-
-
-        </div>
-
-      
-      </section>
-
       <!-- Colors -->
 
       <section id="colors" style="margin: 4rem 0">
         <h2 class="numbered-title"><span>03</span> colors</h2>
-        <!-- Color scheme 1 -->
         <div class="flex">
           <div style="flex-grow: 1">
             <div
-              style="padding: 3rem 1rem 1rem; border: 1px solid black; border-radius: 5px;"
+              style="
+                padding: 3rem 1rem 1rem;
+                border: 1px solid black;
+                border-radius: 5px;
+              "
               class="bg-black uppercase text-white"
             ></div>
           </div>
 
           <div style="flex-grow: 1">
             <div
-              style="padding: 3rem 1rem 1rem; border: 1px solid black; border-radius: 5px;"
+              style="
+                padding: 3rem 1rem 1rem;
+                border: 1px solid black;
+                border-radius: 5px;
+              "
               class="bg-white text-dark uppercase"
             ></div>
           </div>
 
           <div style="flex-grow: 1">
             <div
-              style="padding: 3rem 1rem 1rem; border: 1px solid black; border-radius: 5px;"
+              style="
+                padding: 3rem 1rem 1rem;
+                border: 1px solid black;
+                border-radius: 5px;
+              "
               class="bg-accent text-dark uppercase"
             ></div>
           </div>
 
           <div style="flex-grow: 1">
             <div
-              style="padding: 3rem 1rem 1rem; border: 1px solid black; border-radius: 5px;"
+              style="
+                padding: 3rem 1rem 1rem;
+                border: 1px solid black;
+                border-radius: 5px;
+              "
               class="bg-f-light uppercase"
             ></div>
           </div>
 
           <div style="flex-grow: 1">
             <div
-              style="padding: 3rem 1rem 1rem; border: 1px solid black; border-radius: 5px;"
+              style="
+                padding: 3rem 1rem 1rem;
+                border: 1px solid black;
+                border-radius: 5px;
+              "
               class="bg-f-dark uppercase"
             ></div>
           </div>
@@ -111,7 +146,7 @@
 
       <section id="typography" style="margin: 4rem 0">
         <h2 class="numbered-title"><span>04 </span>Typography</h2>
-        <div class="flex" style="gap: 6rem;">
+        <div class="flex" style="gap: 6rem">
           <div class="flow" style="flex-basis: 100%; --flow-space: 4rem">
             <div>
               <p class="text-accent">Heading 1 - Shrikhand - 100px</p>
@@ -146,8 +181,23 @@
 
           <div class="flow" style="flex-basis: 100%; --flow-space: 4rem">
             <div>
-              <p class="text-accent">Accent Text - Indie Flower - 32px</p>
-              <p class="fs-600 ff-flower">So happy to see you!</p>
+              <p class="text-accent">Subheading 1 - Indie Flower - 80px - 4.75px Character Space</p>
+              <p class="fs-800 ff-flower text-accent letter-spacing-1">Welcome!</p>
+            </div>
+            <div>
+              <p class="text-accent">Subheading 2 - Indie Flower - 32px</p>
+              <p class="fs-600 ff-flower">Thanks for stopping by!</p>
+            </div>
+            <div>
+              <p class="text-accent">Subheading 3 - Roboto Condensed - 20px</p>
+              <p class="fs-500 ff-roboto-cond text-accent">My name is Tom and I have things to say.</p>
+            </div>
+            <div>
+              <p class="text-accent">Accent Text - Indie Flower - 20px</p>
+              <p class="fs-500 ff-flower">
+                Have you tried the theme changer above? Let me know which one
+                you preferred!
+              </p>
             </div>
             <div>
               <p class="text-accent">
@@ -159,7 +209,7 @@
             </div>
             <div>
               <p class="text-accent">Body Text</p>
-              <p style="text-align: justify">
+              <p class="justify">
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                 Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
                 neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium,

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./resources/css/styles.css" />
+
+    <!-- Fonts -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@400;500;700;900&family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Title & Icon -->
+    <title>Tom O'Connell | Web Developer</title>
+    <link
+      rel="icon"
+      href="./resources/images/logo.png"
+      type="image/icon type"
+    />
+
+    <!-- Javascript -->
+    <script src="./resources/javascript/main.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Header / title section -->
+    <section id="header">
+      <div class="bg-black grid">
+        <img class="logo" alt="Logo" />
+        <h1 class="fs-800 ff-bubble text-f-light" style="text-align: center">
+          Tom O'Connell
+        </h1>
+        <div class="flex social-icons">
+          <div class="social-icon">
+            <a
+              href="#"
+              onclick='window.open("https://github.com/twoconnell");return false;'
+            >
+              <img class="github-icon" alt="Github" />
+            </a>
+          </div>
+          <div class="social-icon">
+            <a
+              href="#"
+              onclick='window.open("https://www.linkedin.com/in/tom-o-connell-8a2480251/");return false;'
+            >
+              <img class="linkedin-icon" alt="LinkedIn"
+            /></a>
+          </div>
+          <div class="social-icon">
+            <a href="mailto:tw.oconnell@icloud.com?subject=Loved your website!">
+              <img class="email-icon" alt="Email"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theme picker section -->
+    <section id="theme-picker">
+      <div class="bg-accent">
+        <form class="color-picker" action="">
+          <fieldset>
+            <legend class="sr-only">Pick a colour scheme</legend>
+            <label for="theme1" class="sr-only">Theme 1</label>
+            <input type="radio" name="theme" id="theme1" checked />
+
+            <label for="theme2" class="sr-only">Theme 2</label>
+            <input type="radio" name="theme" id="theme2" />
+
+            <label for="theme3" class="sr-only">Theme 3</label>
+            <input type="radio" name="theme" id="theme3" />
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+    <!-- About me section -->
+    <section id="about-me">
+      <div class="grid-container grid-container--home">
+        <div>
+          <h2 class="text-accent fs-800 ff-flower letter-spacing-1 center">
+            Welcome!
+          </h2>
+          <p class="fs-500 ff-roboto-cond text-accent justify">
+            My name's Tom and I'm an aspiring Full-Stack developer, currently making great looking websites as I continue my education.
+          </p>
+          <div class="headshot-container">
+            <img src="./resources/images/headshot.jpg" />
+          </div>
+        </div>
+        <div>
+          <p class="justify">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
+            neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium,
+            ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+            eget blandit nunc tortor eu nibh. </p>
+            <br>
+            <p>Nullam mollis. Ut justo.
+            Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer
+            adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh
+            nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel,
+            nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor
+            libero sodales leo, eget blandit nunc tortor eu nibh. Nullam
+            mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit
+            amet, consectetuer adipiscing elit. Phasellus hendrerit.
+            Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel,
+            dapibus id, mattis vel, nisi.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

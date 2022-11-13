@@ -5,9 +5,13 @@
 :root {
   /* colors */
 
-  /* Initial color theme colors for theme 1 (default them) and colored logo */
+  /* Initial color theme colors for theme 1 (default them) and colored logos */
 
-  --logo: url(../images/theme1-logo.png);
+  --logo: url(../images/logo/theme1-logo.png);
+
+  --email-icon: url(../images/social-icons/mail.png);
+  --github-icon: url(../images/social-icons/github.png);
+  --linkedin-icon: url(../images/social-icons/linkedin.png);
 
   --clr-black: 220 5% 13%;
   --clr-white: 5 26% 92%;
@@ -22,11 +26,11 @@
 
   /* font-sizes */
 
-  --fs-900: 6.25rem;
-  --fs-800: 5rem;
+  --fs-900: clamp(5rem, 8vw + 1rem, 6.25rem);
+  --fs-800: clamp(4.5rem, 8vw + 1rem, 5rem);
   --fs-700: 3.5rem;
   --fs-600: 2rem;
-  --fs-500: 1.75rem;
+  --fs-500: 1.25rem;
   --fs-400: 1rem;
   --fs-300: 0.875rem;
 
@@ -36,8 +40,6 @@
   --ff-flower: 'Indie Flower', cursive;
   --ff-roboto: 'Roboto', sans-serif;
   --ff-roboto-cond: 'Roboto Condensed', sans-serif;
-
-
 
 }
 
@@ -122,6 +124,43 @@ select {
 .grid {
   display: grid;
   gap: var(--gap, 1rem);
+  place-content: center;
+}
+
+.grid-container {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding-inline: 2rem;
+}
+
+.grid-container * {
+  max-width: 50ch;
+}
+
+@media (min-width: 62em) {
+  .grid-container {
+    text-align: justify;
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
+        1rem,
+        1fr
+      );
+  }
+
+  .grid-container > *:first-child {
+    grid-column: 2;
+  }
+
+  .grid-container > *:last-child {
+    grid-column: 3;
+  }
+
+  .grid-container--home {
+    padding-bottom: max(6rem, 20vh);
+    padding-top: 4rem;
+
+  }
 }
 
 .flow > *:where(:not(:first-child)) {
@@ -164,7 +203,6 @@ select {
 .text-f-light { color: hsl( var(--clr-f-light)); }
 .text-f-dark { color: hsl( var(--clr-f-dark)); }
 
-
 /* Font Families */
 
 .ff-bubble { font-family: var(--ff-bubble);}
@@ -195,6 +233,8 @@ select {
 }
 
 .uppercase { text-transform: uppercase; }
+.center { text-align: center; }
+.justify { text-align: justify; }
 
 /* Design system titles */
 
@@ -211,7 +251,80 @@ select {
   color: hsl(var(--clr-accent) / 0.75);
 }
 
+/* -------------------------------------------------------------------------------------------- */
+/* Basic construction                                                                           */
+/* -------------------------------------------------------------------------------------------- */
 
+#header > * {
+  height: 100vh;
+}
+
+#about-me > * {
+  height: 100vh;
+}
+
+
+/* -------------------------------------------------------------------------------------------- */
+/* header styles                                                                                */
+/* -------------------------------------------------------------------------------------------- */
+
+.logo {
+  content: var(--logo);
+  max-height: 20rem;
+  margin-inline: auto;
+}
+
+.social-icons {
+  justify-content: space-around;
+  gap: 4rem;
+  margin-inline: auto;
+}
+
+.social-icon {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  width: 90px;
+  z-index: 1;
+}
+
+.social-icon::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: hsl(var(--clr-f-dark) / 1);
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 500ms linear, transform 750ms ease-in-out;
+}
+
+.social-icon:hover::after,
+.social-icon:focus::after {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+.github-icon {
+  content: var(--github-icon);
+}
+
+.email-icon {
+  content: var(--email-icon);
+}
+
+.linkedin-icon {
+  content: var(--linkedin-icon);
+}
+
+@media (min-width: 45em) {
+  .social-icons {
+    gap: 6rem;
+  }
+}
 /* -------------------------------------------------------------------------------------------- */
 /* Color picker                                                                                 */
 /* -------------------------------------------------------------------------------------------- */
@@ -222,12 +335,12 @@ select {
   display: flex;
   gap: 4rem;
   width: fit-content;
-  padding: 1rem 2rem;
+  padding: 3rem 0;
   margin-inline: auto;
   border-radius: 2rem;
 }
 
-/* Style radio boxes */
+/* Style radio button */
 .color-picker input[type="radio"] {
   appearance: none;
   width: 2rem;
@@ -235,6 +348,15 @@ select {
   outline: 3px solid var(--radio-color, currentColor);
   outline-offset: 3px;
   border-radius: 50%;
+  transition: 500ms;
+}
+
+/* Radio buttons on hover */
+
+.color-picker input[type="radio"]:hover {
+  background-color: var(--radio-color);
+  transition: 500ms;
+
 }
 
 /* Fills in checked radio */
@@ -253,7 +375,7 @@ select {
   --clr-accent: 4 27% 64%;
   --clr-f-light: 194 88% 78%;
   --clr-f-dark: 203 94% 54%;
-  --logo: url(../images/theme1-logo.png)
+  --logo: url(../images/logo/theme1-logo.png)
 }
 
 /* Color theme 2 styles*/
@@ -264,7 +386,7 @@ select {
   --clr-accent: 116 27% 64%; 
   --clr-f-light: 50 98% 68%; 
   --clr-f-dark: 31 97% 59%;
-  --logo: url(../images/theme2-logo.png);
+  --logo: url(../images/logo/theme2-logo.png);
 }
 
 /* Color theme 3 styles*/
@@ -275,12 +397,7 @@ select {
   --clr-accent: 356 79% 72%;
   --clr-f-light: 18 100% 80%;
   --clr-f-dark: 225 41% 29%;
-  --logo: url(../images/theme3-logo.png)
+  --logo: url(../images/logo/theme3-logo.png)
 }
 
-.logo {
-  content: var(--logo);
-  max-height: 20rem;
-  margin-inline: auto;
-}
 

@@ -10,9 +10,6 @@ const storeTheme = function (theme) {
   localStorage.setItem("theme", theme);
 };
 
-// for no :has support
-
-
 const getTheme = function () {
   const activeTheme = localStorage.getItem("theme");
   colorThemes.forEach((themeOption) => {
