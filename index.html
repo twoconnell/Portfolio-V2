@@ -28,6 +28,23 @@
   </head>
 
   <body>
+    <!-- Cookie popup -->
+    <section id="cookie-popup">
+      <div class="cookie-popup flow" style="--flow-space: 0.6rem">
+        <h1 class="fs-600 ff-flower text-accent">Want a cookie?</h1>
+        <p>
+          This website uses cookies to remember your favourite colour theme!
+        </p>
+        <p style="color: hsl(var(--clr-black) / 0.5); padding-top: 0rem">
+          Scrolling is disabled until you decide.
+        </p>
+        <div class="cookie-buttons">
+          <button class="cookie-button cookie-button-yes">Accept</button>
+          <button class="cookie-button cookie-button-no">Decline</button>
+        </div>
+      </div>
+    </section>
+
     <!-- Header / title section -->
     <section id="header">
       <div class="bg-black grid">
@@ -82,37 +99,50 @@
 
     <!-- About me section -->
     <section id="about-me">
-      <div class="grid-container grid-container--home">
-        <div>
-          <h2 class="text-accent fs-800 ff-flower letter-spacing-1 center">
-            Welcome!
-          </h2>
-          <p class="fs-500 ff-roboto-cond text-accent justify">
-            My name's Tom and I'm an aspiring Full-Stack developer, currently making great looking websites as I continue my education.
+      <div class="grid-container grid-container--about">
+        <div class="about-me--side">
+          <h2 class="fs-800 ff-flower letter-spacing-1 center">Welcome!</h2>
+          <p class="fs-500 ff-roboto-cond center">
+            My name's Tom and I'm an aspiring Full-Stack developer, currently
+            making great looking websites as I continue my education.
           </p>
-          <div class="headshot-container">
+          <div class="headshot-container flex">
             <img src="./resources/images/headshot.jpg" />
           </div>
         </div>
-        <div>
+        <div class="about-me--side" style="justify-content: center">
           <p class="justify">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
-            neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium,
-            ligula sollicitudin laoreet viverra, tortor libero sodales leo,
-            eget blandit nunc tortor eu nibh. </p>
-            <br>
-            <p>Nullam mollis. Ut justo.
-            Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer
-            adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh
-            nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel,
-            nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor
-            libero sodales leo, eget blandit nunc tortor eu nibh. Nullam
-            mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus
+            hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque,
+            aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula
+            sollicitudin laoreet viverra, tortor libero sodales leo, eget
+            blandit nunc tortor eu nibh.
+          </p>
+          <p class="justify">
+            Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit
             amet, consectetuer adipiscing elit. Phasellus hendrerit.
+            Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel,
+            dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin
+            laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor
+            eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum
+            dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit.
             Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel,
             dapibus id, mattis vel, nisi.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="flow">
+        <div class="grid-container">
+          <div class="project-img"></div>
+          <div class="project-info"></div>
+        </div>
+        <div class="grid-container">
+          <div class="project-info"></div>
+          <div class="project-img"></div>
         </div>
       </div>
     </section>

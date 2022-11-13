@@ -3,15 +3,13 @@
 /* -------------------------------------------------------------------------------------------- */
 
 :root {
-  /* colors */
-
   /* Initial color theme colors for theme 1 (default them) and colored logos */
 
   --logo: url(../images/logo/theme1-logo.png);
 
-  --email-icon: url(../images/social-icons/mail.png);
-  --github-icon: url(../images/social-icons/github.png);
-  --linkedin-icon: url(../images/social-icons/linkedin.png);
+  --email-icon: url(../images/social-icons/theme1-mail.png);
+  --github-icon: url(../images/social-icons/theme1-github.png);
+  --linkedin-icon: url(../images/social-icons/theme1-linkedin.png);
 
   --clr-black: 220 5% 13%;
   --clr-white: 5 26% 92%;
@@ -23,11 +21,10 @@
   --clr2-radio: 50 98% 68%;
   --clr3-radio: 18 100% 80%;
 
-
   /* font-sizes */
 
   --fs-900: clamp(5rem, 8vw + 1rem, 6.25rem);
-  --fs-800: clamp(4.5rem, 8vw + 1rem, 5rem);
+  --fs-800: 5rem;
   --fs-700: 3.5rem;
   --fs-600: 2rem;
   --fs-500: 1.25rem;
@@ -40,9 +37,7 @@
   --ff-flower: 'Indie Flower', cursive;
   --ff-roboto: 'Roboto', sans-serif;
   --ff-roboto-cond: 'Roboto Condensed', sans-serif;
-
 }
-
 
 /* -------------------------------------------------------------------------------------------- */
 /* Reset                                                                                        */
@@ -138,14 +133,10 @@ select {
   max-width: 50ch;
 }
 
-@media (min-width: 62em) {
+@media (min-width: 58em) {
   .grid-container {
-    text-align: justify;
     column-gap: var(--container-gap, 2rem);
-    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
-        1rem,
-        1fr
-      );
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
   }
 
   .grid-container > *:first-child {
@@ -156,10 +147,9 @@ select {
     grid-column: 3;
   }
 
-  .grid-container--home {
+  .grid-container--about {
     padding-bottom: max(6rem, 20vh);
-    padding-top: 4rem;
-
+    padding-top: 10vh;
   }
 }
 
@@ -184,6 +174,8 @@ select {
   white-space: nowrap; /* added line */
   border: 0;
 }
+
+.hide { display: none; }
 
 /* -------------------------------------------------------------------------------------------- */
 /* Style classes                                                                                */
@@ -252,21 +244,65 @@ select {
 }
 
 /* -------------------------------------------------------------------------------------------- */
-/* Basic construction                                                                           */
+/* Cookie Popup                                                                                 */
+/* -------------------------------------------------------------------------------------------- */
+
+.cookie-popup {
+  z-index: 1000;
+  position: absolute;
+  bottom: 0;
+
+  text-align: center;
+  width: 100vw;
+  padding: 1rem;
+
+  background-color: hsl( var(--clr-white));
+}
+
+.cookie-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+ .cookie-button  {
+  cursor: pointer;
+  background-color: hsl( var(--clr-white));
+  border: 3px solid hsl( var(--clr-accent));
+  color: hsl( var(--clr-accent));
+  border-radius: 10px;
+  padding: .2rem 1rem;
+}
+
+.cookie-button:hover {
+  background-color: hsl( var(--clr-accent));
+  border-color: hsl( var(--clr-white));
+  color: hsl( var(--clr-white));
+}
+
+@media (min-width: 45em) {
+  .cookie-popup {
+    z-index: 1000;
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+  
+    text-align: center;
+    max-width: 40ch;
+    padding: 1rem;
+  
+    background-color: hsl( var(--clr-white));
+    border-radius: 15px;
+  }
+}
+
+/* -------------------------------------------------------------------------------------------- */
+/* header styles                                                                                */
 /* -------------------------------------------------------------------------------------------- */
 
 #header > * {
   height: 100vh;
 }
-
-#about-me > * {
-  height: 100vh;
-}
-
-
-/* -------------------------------------------------------------------------------------------- */
-/* header styles                                                                                */
-/* -------------------------------------------------------------------------------------------- */
 
 .logo {
   content: var(--logo);
@@ -286,7 +322,7 @@ select {
   place-items: center;
   aspect-ratio: 1;
   border-radius: 50%;
-  width: 90px;
+  width: 60px;
   z-index: 1;
 }
 
@@ -316,6 +352,10 @@ select {
   .social-icons {
     gap: 6rem;
   }
+
+  .social-icon {
+    width: 90px;
+  }
 }
 
 /* -------------------------------------------------------------------------------------------- */
@@ -323,6 +363,7 @@ select {
 /* -------------------------------------------------------------------------------------------- */
 
 /* Style form */
+
 .color-picker > fieldset {
   border: 0;
   display: flex;
@@ -334,8 +375,10 @@ select {
 }
 
 /* Style radio button */
+
 .color-picker input[type="radio"] {
   appearance: none;
+  cursor: pointer;
   width: 2rem;
   height: 2rem;
   outline: 3px solid var(--radio-color, currentColor);
@@ -345,17 +388,21 @@ select {
 }
 
 /* Radio buttons on hover */
+
 .color-picker input[type="radio"]:hover { background-color: var(--radio-color); }
 
 /* Fills in checked radio */
+
 .color-picker input[type="radio"]:checked { background-color: var(--radio-color); }
 
 /* Radio colors */
+
 .color-picker input[type="radio"]#theme1 { --radio-color: hsl(var(--clr1-radio)); }
 .color-picker input[type="radio"]#theme2 { --radio-color: hsl(var(--clr2-radio)); }
 .color-picker input[type="radio"]#theme3 { --radio-color: hsl(var(--clr3-radio)); }
 
 /* Color theme 1 styles*/
+
 .theme1,
 :root:has(#theme1:checked) {
   --clr-black: 220 5% 13%;
@@ -363,10 +410,14 @@ select {
   --clr-accent: 4 27% 64%;
   --clr-f-light: 194 88% 78%;
   --clr-f-dark: 203 94% 54%;
-  --logo: url(../images/logo/theme1-logo.png)
+  --logo: url(../images/logo/theme1-logo.png);
+  --email-icon: url(../images/social-icons/theme1-mail.png);
+  --github-icon: url(../images/social-icons/theme1-github.png);
+  --linkedin-icon: url(../images/social-icons/theme1-linkedin.png);
 }
 
 /* Color theme 2 styles*/
+
 .theme2,
 :root:has(#theme2:checked) {
   --clr-black: 220 5% 11%; 
@@ -375,9 +426,13 @@ select {
   --clr-f-light: 50 98% 68%; 
   --clr-f-dark: 31 97% 59%;
   --logo: url(../images/logo/theme2-logo.png);
+  --email-icon: url(../images/social-icons/theme2-mail.png);
+  --github-icon: url(../images/social-icons/theme2-github.png);
+  --linkedin-icon: url(../images/social-icons/theme2-linkedin.png);
 }
 
 /* Color theme 3 styles*/
+
 .theme3,
 :root:has(#theme3:checked) {
   --clr-black: 60 100% 4%;
@@ -385,7 +440,56 @@ select {
   --clr-accent: 356 79% 72%;
   --clr-f-light: 18 100% 80%;
   --clr-f-dark: 225 41% 29%;
-  --logo: url(../images/logo/theme3-logo.png)
+  --logo: url(../images/logo/theme3-logo.png);
+  --email-icon: url(../images/social-icons/theme3-mail.png);
+  --github-icon: url(../images/social-icons/theme3-github.png);
+  --linkedin-icon: url(../images/social-icons/theme3-linkedin.png);
 }
 
+/* -------------------------------------------------------------------------------------------- */
+/* About me styles                                                                              */
+/* -------------------------------------------------------------------------------------------- */
 
+#about-me > * {
+  height: 100vh;
+}
+
+.headshot-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.about-me--side {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: hsl( var(--clr-white));
+  color: hsl( var(--clr-accent));
+  justify-content: space-between;
+}
+
+@media (min-width: 68em) {
+  .about-me--side {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 20px;
+    background-color: hsl( var(--clr-accent));
+    color: hsl( var(--clr-white));
+    height: 80vh;
+  }
+}
+
+/* -------------------------------------------------------------------------------------------- */
+/* Projects styles                                                                              */
+/* -------------------------------------------------------------------------------------------- */
+
+#projects > * {
+  min-height: 100vh;
+  background-color: hsl( var(--clr-f-light));
+}
