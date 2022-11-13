@@ -81,7 +81,7 @@ body {
 
 img,
 picture {
-  max-width: 100%;
+  width: 100%;
   display: block;
 }
 
@@ -308,7 +308,8 @@ select {
 
 .logo {
   content: var(--logo);
-  max-height: 16rem;
+  height: 16rem;
+  width: 16rem;
   margin-inline: auto;
 }
 
@@ -352,7 +353,8 @@ select {
 
 @media (min-width: 45em) {
   .logo {
-    max-height: 20rem;
+    height: 20rem;
+    width: 20rem;
   }
   .social-icons {
     gap: 6rem;
@@ -455,16 +457,14 @@ select {
 /* About me styles                                                                              */
 /* -------------------------------------------------------------------------------------------- */
 
-about-me {
+.about-me {
   min-height: 100vh;
 }
 
 .headshot-container {
-  display: flex;
   justify-content: center;
   border-radius: 20px;
   overflow: hidden;
-  max-width: 100%;
 }
 
 .about-me--side {
