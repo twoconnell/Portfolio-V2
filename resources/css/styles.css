@@ -308,23 +308,16 @@ select {
   transform: scale(1.3);
 }
 
-.github-icon {
-  content: var(--github-icon);
-}
-
-.email-icon {
-  content: var(--email-icon);
-}
-
-.linkedin-icon {
-  content: var(--linkedin-icon);
-}
+.github-icon { content: var(--github-icon); }
+.email-icon { content: var(--email-icon); }
+.linkedin-icon { content: var(--linkedin-icon); }
 
 @media (min-width: 45em) {
   .social-icons {
     gap: 6rem;
   }
 }
+
 /* -------------------------------------------------------------------------------------------- */
 /* Color picker                                                                                 */
 /* -------------------------------------------------------------------------------------------- */
@@ -348,16 +341,11 @@ select {
   outline: 3px solid var(--radio-color, currentColor);
   outline-offset: 3px;
   border-radius: 50%;
-  transition: 500ms;
+  transition: 500ms ease-in-out;
 }
 
 /* Radio buttons on hover */
-
-.color-picker input[type="radio"]:hover {
-  background-color: var(--radio-color);
-  transition: 500ms;
-
-}
+.color-picker input[type="radio"]:hover { background-color: var(--radio-color); }
 
 /* Fills in checked radio */
 .color-picker input[type="radio"]:checked { background-color: var(--radio-color); }
