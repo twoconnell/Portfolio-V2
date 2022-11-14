@@ -31,24 +31,24 @@ try {
 } catch (e) {}
 
 var wheelOpt = supportsPassive ? { passive: false } : false;
-var wheelEvent = "onwheel" in document.createElement("div") ? "wheel" : "mousewheel";
+var wheelEvent =
+  "onwheel" in document.createElement("div") ? "wheel" : "mousewheel";
 
 function disableScroll() {
-  window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+  window.addEventListener("DOMMouseScroll", preventDefault, false); // older FF
   window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+  window.addEventListener("touchmove", preventDefault, wheelOpt); // mobile
+  window.addEventListener("keydown", preventDefaultForScrollKeys, false);
 }
 
 function enableScroll() {
-  window.removeEventListener('DOMMouseScroll', preventDefault, false);
-  window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
-  window.removeEventListener('touchmove', preventDefault, wheelOpt);
-  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+  window.removeEventListener("DOMMouseScroll", preventDefault, false);
+  window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+  window.removeEventListener("touchmove", preventDefault, wheelOpt);
+  window.removeEventListener("keydown", preventDefaultForScrollKeys, false);
 }
 
 disableScroll();
-
 
 // ------------------------------------------------------------------------
 //  Cookie popup
@@ -85,7 +85,8 @@ const colorThemes = document.querySelectorAll('[name="theme"]');
 //store theme
 
 const storeTheme = function (theme) {
-  if (document.cookie) { //Checks for cookie before setting localStorage
+  if (document.cookie) {
+    //Checks for cookie before setting localStorage
     localStorage.setItem("theme", theme);
   }
 };
@@ -106,3 +107,22 @@ colorThemes.forEach((themeOption) => {
 });
 
 document.onload = getTheme();
+
+// ------------------------------------------------------------------------
+//  About section read more
+// ------------------------------------------------------------------------
+
+const hiddenSection = document.querySelectorAll(".about-me-hidden");
+const readMore = document.querySelector(".about-show-more");
+
+readMore.addEventListener("click", () => {
+  hiddenSection.forEach((section) => {
+    section.classList.toggle("hide");
+
+    if (section.classList.contains("hide")) {
+      readMore.innerHTML = "Show more";
+    } else {
+      readMore.innerHTML = "Show less";
+    }
+  });
+});

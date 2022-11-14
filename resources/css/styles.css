@@ -111,6 +111,10 @@ select {
 /* Utility classes                                                                              */
 /* -------------------------------------------------------------------------------------------- */
 
+.min-100vh {
+  min-height: 100vh;
+}
+
 .flex {
   display: flex;
   gap: var(--gap, 1rem);
@@ -136,19 +140,19 @@ select {
 @media (min-width: 58em) {
   .grid-container {
     column-gap: var(--container-gap, 2rem);
+    row-gap: 2rem;
     grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
   }
 
-  .grid-container > *:first-child {
+  .grid-container > *:nth-child(odd) {
     grid-column: 2;
   }
 
-  .grid-container > *:last-child {
+  .grid-container > *:nth-child(even) {
     grid-column: 3;
   }
 
   .grid-container--about {
-    /* padding-bottom: max(6rem, 20vh); */
     padding: 10vh 0;
   }
 }
@@ -161,6 +165,12 @@ select {
   padding-inline: 2em;
   margin-inline: auto;
   max-width: 80rem; 
+}
+
+.img-container {
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .sr-only {
@@ -180,6 +190,10 @@ select {
 /* -------------------------------------------------------------------------------------------- */
 /* Style classes                                                                                */
 /* -------------------------------------------------------------------------------------------- */
+
+/* Random bits */
+
+.pointer { cursor: pointer; }
 
 /* Colors */
 
@@ -227,6 +241,7 @@ select {
 .uppercase { text-transform: uppercase; }
 .center { text-align: center; }
 .justify { text-align: justify; }
+.indent { text-indent: 3rem; }
 
 /* Design system titles */
 
@@ -251,22 +266,17 @@ select {
   z-index: 1000;
   position: absolute;
   bottom: 0;
-
-  text-align: center;
   width: 100vw;
   padding: 1rem;
-
-  background-color: hsl( var(--clr-white));
+  --flow-space: 0.6rem;
 }
 
-.cookie-buttons {
-  display: flex;
+.small-buttons {
   justify-content: center;
-  gap: 4rem;
+  --gap: 4rem;
 }
 
- .cookie-button  {
-  cursor: pointer;
+ .small-button  {
   background-color: hsl( var(--clr-white));
   border: 3px solid hsl( var(--clr-accent));
   color: hsl( var(--clr-accent));
@@ -274,7 +284,7 @@ select {
   padding: .2rem 1rem;
 }
 
-.cookie-button:hover {
+.small-button:hover {
   background-color: hsl( var(--clr-accent));
   border-color: hsl( var(--clr-white));
   color: hsl( var(--clr-white));
@@ -285,13 +295,9 @@ select {
     z-index: 1000;
     position: absolute;
     bottom: 2rem;
-    left: 2rem;
-  
-    text-align: center;
+    left: 2rem; 
     max-width: 40ch;
-    padding: 1rem;
-  
-    background-color: hsl( var(--clr-white));
+    padding: 1rem;  
     border-radius: 15px;
   }
 }
@@ -302,7 +308,6 @@ select {
 
 .header {
   height: 100vh;
-  background-color: hsl( var(--clr-black));
   padding: 6rem;
 }
 
@@ -457,20 +462,9 @@ select {
 /* About me styles                                                                              */
 /* -------------------------------------------------------------------------------------------- */
 
-.about-me {
-  min-height: 100vh;
-}
-
-.headshot-container {
-  justify-content: center;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
 .about-me--side {
-  display: flex;
   flex-direction: column;
-  gap: 2rem;
+  --gap: 2rem;
   padding: 2rem;
   background-color: hsl( var(--clr-white));
   color: hsl( var(--clr-accent));
@@ -479,9 +473,8 @@ select {
 
 @media (min-width: 68em) {
   .about-me--side {
-    display: flex;
     flex-direction: column;
-    gap: 2rem;
+    --gap: 2rem;
     padding: 2rem;
     border-radius: 20px;
     background-color: hsl( var(--clr-accent));
@@ -493,8 +486,3 @@ select {
 /* -------------------------------------------------------------------------------------------- */
 /* Projects styles                                                                              */
 /* -------------------------------------------------------------------------------------------- */
-
-#projects > * {
-  min-height: 100vh;
-  background-color: hsl( var(--clr-f-light));
-}

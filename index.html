@@ -19,7 +19,7 @@
     <title>Tom O'Connell | Web Developer</title>
     <link
       rel="icon"
-      href="./resources/images/logo.png"
+      href="./resources/images/logo/dark-logo.png"
       type="image/icon type"
     />
 
@@ -30,7 +30,7 @@
   <body>
     <!-- Cookie popup -->
     <section id="cookie-popup">
-      <div class="cookie-popup flow" style="--flow-space: 0.6rem">
+      <div class="cookie-popup flow center bg-white">
         <h1 class="fs-600 ff-flower text-accent">Want a cookie?</h1>
         <p>
           This website uses cookies to remember your favourite colour theme!
@@ -38,16 +38,16 @@
         <p style="color: hsl(var(--clr-black) / 0.5); padding-top: 0rem">
           Scrolling is disabled until you decide.
         </p>
-        <div class="cookie-buttons">
-          <button class="cookie-button cookie-button-yes">Accept</button>
-          <button class="cookie-button cookie-button-no">Decline</button>
+        <div class="small-buttons flex">
+          <button class="small-button cookie-button-yes pointer">Accept</button>
+          <button class="small-button cookie-button-no pointer">Decline</button>
         </div>
       </div>
     </section>
 
     <!-- Header / title section -->
     <section id="header">
-      <div class="header grid">
+      <div class="header grid bg-black">
         <img class="logo" alt="Logo" />
         <h1 class="fs-800 ff-bubble text-f-light" style="text-align: center">
           Tom O'Connell
@@ -99,43 +99,67 @@
 
     <!-- About me section -->
     <section id="about-me">
-      <div class="about-me grid-container grid-container--about">
-        <div class="about-me--side">
+      <div class="min-100vh grid-container grid-container--about">
+        <!-- Top left -->
+        <div class="about-me--side flex">
           <h2 class="fs-800 ff-flower letter-spacing-1 center">Welcome!</h2>
           <p class="fs-500 ff-roboto-cond center">
             My name's Tom and I'm an aspiring Full-Stack developer, currently
             making great looking websites as I continue my education.
           </p>
-          <div class="headshot-container">
+          <div class="img-container">
             <img src="./resources/images/headshot.jpg" />
           </div>
         </div>
-        <div class="about-me--side" style="justify-content: center">
-          <p class="justify">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus
-            hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque,
-            aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula
-            sollicitudin laoreet viverra, tortor libero sodales leo, eget
-            blandit nunc tortor eu nibh.
+        <!-- Top Right -->
+        <div class="about-me--side flex">
+          <p class="justify indent fs-400">
+            For better or worse, technology is in my blood (I’m a millennial, sue me!), but for 
+            most of my life I’ve been a consumer, not a creator. I dabbled in Android bash scripts 
+            in my teens to expedite rooting (and re-rooting, and re-rooting, and re-rooting) my phones, 
+            but in the process of doing this never really put anything into the world I could stamp 
+            as my own creation. 
           </p>
-          <p class="justify">
-            Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit
-            amet, consectetuer adipiscing elit. Phasellus hendrerit.
-            Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel,
-            dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin
-            laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor
-            eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum
-            dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit.
-            Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel,
-            dapibus id, mattis vel, nisi.
+          <p class="justify indent fs-400">
+            Fast forward 10 years working in the bicycle industry and the itch to create has never quite 
+            gone away. It was this itch that rekindled a fire to go back to school to learn how the very 
+            structure of websites are created, and to start building my very own. This website is a love 
+            letter to the very technologies that allow this all to function, and I hope you like what you see!
+          </p>
+          <p class="ff-flower fs-500 center">
+            Check out the different themes above and let me know which one you like best!
+          </p>
+          <div class="small-buttons flex">
+            <button class="small-button about-show-more pointer">Show more</button>
+          </div>
+
+        </div>
+        <!-- Bottom Left -->
+        <div class="about-me--side about-me-hidden flex hide">
+          <p class="fs-600 ff-roboto-cond letter-spacing-1 center">I'm good at these bits</p>
+          
+          <p class="fs-600 ff-roboto-cond letter-spacing-1 center">... And I'm getting better at these bits!</p>
+          
+        </div>
+        <!-- Bottom Right -->
+        <div class="about-me--side about-me-hidden flex hide">
+          <p class="justify indent fs-400">
+            I’ve been studying Codecademy’s Full-Stack Developer course which started out on the front end, slowly 
+            moving towards the back end later in the course and I’ve developed skills in CSS, HTML, & JavaScript. 
+            If you look through the files for my own website here you’ll note the incredible attention to detail I 
+            impart in my code; building a beautiful website is one thing, but doing so with code that impresses my 
+            peers is my real passion. Throughout my education I have excelled in CSS and HTML, but I’ve also developed 
+            a strong fundamental knowledge of JavaScript, which continues to improve as I seek to do more with web-based 
+            technologies.
           </p>
         </div>
+        
       </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
-      <div class="flow">
+      <div class="min-100vh bg-f-light flow">
         <div class="grid-container">
           <div class="project-img"></div>
           <div class="project-info"></div>
