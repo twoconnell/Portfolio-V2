@@ -137,26 +137,6 @@ select {
   max-width: 50ch;
 }
 
-@media (min-width: 58em) {
-  .grid-container {
-    column-gap: var(--container-gap, 2rem);
-    row-gap: 2rem;
-    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
-  }
-
-  .grid-container > *:nth-child(odd) {
-    grid-column: 2;
-  }
-
-  .grid-container > *:nth-child(even) {
-    grid-column: 3;
-  }
-
-  .grid-container--about {
-    padding: 10vh 0;
-  }
-}
-
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
@@ -462,7 +442,46 @@ select {
 /* About me styles                                                                              */
 /* -------------------------------------------------------------------------------------------- */
 
-.about-me--side {
+.grid-container--about {
+  margin-inline: 2rem;
+  grid-template-areas:
+    'card-1'
+    'card-2'
+    'show-more-button';
+    padding-bottom: 2rem;
+}
+
+.card-1 {
+  grid-area: card-1;
+}
+
+.card-2 {
+  grid-area: card-2;
+}
+
+.show-more-button {
+  grid-area: show-more-button;
+  padding: clamp(0, 2rem, 5rem);
+  transition: transform 200ms
+}
+
+.show-more-button--rotate-mobile {
+  transform: rotate(180deg);
+  transition: transform 200ms;
+}
+
+.show-more-button--rotate-desktop {
+  transform: rotate(90deg);
+  transition: transform 200ms;
+}
+
+.show-more-button--rotate-desktop-back {
+  transform: rotate(-90deg);
+  transition: transform 200ms;
+}
+
+.about-me--card {
+  flex-grow: 0;
   flex-direction: column;
   --gap: 2rem;
   padding: 2rem;
@@ -471,8 +490,22 @@ select {
   justify-content: space-between;
 }
 
+@media (min-width: 58em) {
+  .grid-container--about {
+    column-gap: var(--container-gap, 2rem);
+    row-gap: 2rem;
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(5rem, 1fr);
+    grid-template-areas:
+      '. card-1 card-2 show-more-button';
+  }
+
+  .grid-container--about {
+    padding: 10vh 0;
+  }
+}
+
 @media (min-width: 68em) {
-  .about-me--side {
+  .about-me--card {
     flex-direction: column;
     --gap: 2rem;
     padding: 2rem;

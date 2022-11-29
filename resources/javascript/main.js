@@ -109,20 +109,68 @@ colorThemes.forEach((themeOption) => {
 document.onload = getTheme();
 
 // ------------------------------------------------------------------------
+//  Mobile / Tablet / desktop conditional
+// ------------------------------------------------------------------------
+
+var screenSize = document.documentElement.clientWidth || window.innerWidth;
+
+// ------------------------------------------------------------------------
 //  About section read more
 // ------------------------------------------------------------------------
 
-const hiddenSection = document.querySelectorAll(".about-me-hidden");
-const readMore = document.querySelector(".about-show-more");
+// variables
+const aboutGrid = document.querySelector(".grid-container--about");
 
-readMore.addEventListener("click", () => {
-  hiddenSection.forEach((section) => {
-    section.classList.toggle("hide");
+const card1Title = document.querySelector(".card-1--title");
+const card1Content = document.querySelector(".card-1--content");
+const card1Image = document.querySelector(".card-1--image");
+const card2Content = document.querySelector(".card-2--content");
+const card2Footer = document.querySelector(".card-2--footer");
 
-    if (section.classList.contains("hide")) {
-      readMore.innerHTML = "Show more";
-    } else {
-      readMore.innerHTML = "Show less";
-    }
-  });
+const showMoreButton = document.querySelector(".show-more-button");
+
+// Set initial arrow direction depending on device
+window.addEventListener("DOMContentLoaded", () => {
+  if (screenSize < 928) {
+    showMoreButton.classList.add("show-more-button--rotate-mobile");
+  } else {
+    showMoreButton.classList.add("show-more-button--rotate-desktop");
+  }
 });
+
+
+
+showMoreButton.addEventListener("click", () => {
+  if (screenSize < 928) {
+    if (showMoreButton.classList.contains("show-more-button--rotate-mobile")) {
+      showMoreButton.classList.remove("show-more-button--rotate-mobile");
+      card2Footer.classList.remove("ff-flower", "fs-500", "center");
+      // Add all my extra about me bits here!
+    } else {
+      showMoreButton.classList.add("show-more-button--rotate-mobile");
+      card2Footer.classList.add("ff-flower", "fs-500", "center");
+      // remove my extra about me bits here and return to footer text
+    }
+  } else {
+    if (showMoreButton.classList.contains("show-more-button--rotate-desktop")) {
+      // Change the button orientation
+      showMoreButton.classList.remove("show-more-button--rotate-desktop");
+      showMoreButton.classList.add("show-more-button--rotate-desktop-back");
+
+      // Change the grid areas
+      aboutGrid.style.gridTemplateAreas = '"show-more-button card-1 card-2 ."';
+
+    } else {
+      // Change the button orientation
+      showMoreButton.classList.add("show-more-button--rotate-desktop");
+      showMoreButton.classList.remove("show-more-button--rotate-desktop-back");
+
+      // Change the grid areas
+      aboutGrid.style.gridTemplateAreas = '". card-1 card-2 show-more-button"';
+
+    }
+
+
+  }
+})
+
