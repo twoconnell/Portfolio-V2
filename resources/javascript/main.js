@@ -121,11 +121,10 @@ var screenSize = document.documentElement.clientWidth || window.innerWidth;
 // variables
 const aboutGrid = document.querySelector(".grid-container--about");
 
-const card1Title = document.querySelector(".card-1--title");
-const card1Content = document.querySelector(".card-1--content");
-const card1Image = document.querySelector(".card-1--image");
-const card2Content = document.querySelector(".card-2--content");
-const card2Footer = document.querySelector(".card-2--footer");
+const card1 = document.querySelector(".card-1");
+const card2 = document.querySelector(".card-2");
+const card3 = document.querySelector(".card-3");
+const card4 = document.querySelector(".card-4");
 
 const showMoreButton = document.querySelector(".show-more-button");
 
@@ -144,12 +143,12 @@ showMoreButton.addEventListener("click", () => {
   if (screenSize < 928) {
     if (showMoreButton.classList.contains("show-more-button--rotate-mobile")) {
       showMoreButton.classList.remove("show-more-button--rotate-mobile");
-      card2Footer.classList.remove("ff-flower", "fs-500", "center");
-      // Add all my extra about me bits here!
+      card3.classList.toggle("hide");
+      card4.classList.toggle("hide");  
     } else {
       showMoreButton.classList.add("show-more-button--rotate-mobile");
-      card2Footer.classList.add("ff-flower", "fs-500", "center");
-      // remove my extra about me bits here and return to footer text
+      card3.classList.toggle("hide");
+      card4.classList.toggle("hide");  
     }
   } else {
     if (showMoreButton.classList.contains("show-more-button--rotate-desktop")) {
@@ -157,16 +156,18 @@ showMoreButton.addEventListener("click", () => {
       showMoreButton.classList.remove("show-more-button--rotate-desktop");
       showMoreButton.classList.add("show-more-button--rotate-desktop-back");
 
-      // Change the grid areas
-      aboutGrid.style.gridTemplateAreas = '"show-more-button card-1 card-2 ."';
+      card1.classList.toggle("hide");
+      card2.classList.toggle("hide");
+      aboutGrid.style.gridTemplateAreas = '"show-more-button card-3 card-4 ."';
 
     } else {
       // Change the button orientation
       showMoreButton.classList.add("show-more-button--rotate-desktop");
       showMoreButton.classList.remove("show-more-button--rotate-desktop-back");
 
-      // Change the grid areas
-      aboutGrid.style.gridTemplateAreas = '". card-1 card-2 show-more-button"';
+      card1.classList.toggle("hide");
+      card2.classList.toggle("hide");
+      aboutGrid.style.gridTemplateAreas = '". card-1 card-2 show-more-button card-3 card-4 ."';
 
     }
 
