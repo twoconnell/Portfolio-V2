@@ -469,10 +469,11 @@ select {
 }
 
 .show-more-button {
-  cursor: pointer;
   grid-area: show-more-button;
+  cursor: pointer;
   padding: clamp(0, 2rem, 5rem);
-  transition: transform 200ms
+  transition: transform 200ms;
+  min-width: 4rem;
 }
 
 
@@ -502,38 +503,30 @@ select {
   transition: 100ms;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 58em) {
   .grid-container--about {
-    column-gap: 2rem;
+    column-gap: 1rem;
+    margin-inline: 2rem;
     row-gap: 2rem;
-    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
     grid-template-areas:
-      '. card-1 card-3 .'
-      '. card-2 card-4 .';
-  }
+      '. card-1 card-2 show-more-button';
+    }
 
   .grid-container--about {
     padding: 10vh 0;
   }
 
-  .card-3,
-  .card-4 {
-    display: block;
+  .card-3 {
+    grid-area: card-1;
   }
-
-  .show-more-button {
-    display: none;
+  
+  .card-4 {
+    grid-area: card-2;
   }
 }
 
 @media (min-width: 75em) {
-  .grid-container--about {
-    overflow: hidden;
-    column-gap: 2.5vw;
-    grid-template-columns: 16.25vw repeat(2, 30vw) max(15vw) repeat(2, 30vw) 16.25vw;
-    grid-template-areas:
-      '. card-1 card-2 show-more-button card-3 card-4 .';
-  }
   .about-me--card {
     flex-direction: column;
     --gap: 2rem;
@@ -542,10 +535,6 @@ select {
     background-color: hsl( var(--clr-accent));
     color: hsl( var(--clr-white));
     height: 80vh;
-  }
-  
-  .show-more-button {
-    display: block;
   }
 }
 

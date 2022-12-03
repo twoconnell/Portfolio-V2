@@ -137,41 +137,45 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Functions to show/hide cards
 
+const toggleAllCards = () => {
+  const cards = [card1, card2, card3, card4];
+  cards.forEach((card) => {
+    card.classList.toggle("hide");
+  });
+};
+
+const toggleExtraCards = () => {
+  const cards = [card3, card4];
+  cards.forEach((card) => {
+    card.classList.toggle("hide");
+  });
+};
 
 showMoreButton.addEventListener("click", () => {
   if (screenSize < 928) {
     if (showMoreButton.classList.contains("show-more-button--rotate-mobile")) {
       showMoreButton.classList.remove("show-more-button--rotate-mobile");
-      card3.classList.toggle("hide");
-      card4.classList.toggle("hide");  
+      toggleExtraCards();
     } else {
       showMoreButton.classList.add("show-more-button--rotate-mobile");
-      card3.classList.toggle("hide");
-      card4.classList.toggle("hide");  
+      toggleExtraCards();
     }
   } else {
     if (showMoreButton.classList.contains("show-more-button--rotate-desktop")) {
       // Change the button orientation
       showMoreButton.classList.remove("show-more-button--rotate-desktop");
       showMoreButton.classList.add("show-more-button--rotate-desktop-back");
-
-      card1.classList.toggle("hide");
-      card2.classList.toggle("hide");
-      aboutGrid.style.gridTemplateAreas = '"show-more-button card-3 card-4 ."';
-
+      toggleAllCards();
+      aboutGrid.style.gridTemplateAreas = '"show-more-button card-1 card-2 ."';
     } else {
       // Change the button orientation
       showMoreButton.classList.add("show-more-button--rotate-desktop");
       showMoreButton.classList.remove("show-more-button--rotate-desktop-back");
 
-      card1.classList.toggle("hide");
-      card2.classList.toggle("hide");
-      aboutGrid.style.gridTemplateAreas = '". card-1 card-2 show-more-button card-3 card-4 ."';
-
+      toggleAllCards();
+      aboutGrid.style.gridTemplateAreas = '". card-1 card-2 show-more-button"';
     }
-
-
   }
-})
-
+});
