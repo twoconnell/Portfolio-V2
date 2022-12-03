@@ -49,10 +49,10 @@
     <section id="header">
       <div class="header grid bg-black">
         <img class="logo" alt="Logo" />
-        <h1 class="fs-800 ff-bubble text-f-light" style="text-align: center">
+        <h1 class="fs-800 ff-bubble text-f-light hidden hidden--left" style="text-align: center">
           Tom O'Connell
         </h1>
-        <div class="flex social-icons">
+        <div class="flex social-icons  hidden hidden--right">
           <div class="icon">
             <a
               href="#"
@@ -136,30 +136,34 @@
         </div>
         <!-- button -->
         <div class="show-more-button">
-          <img
-            src="./resources/images/show-more-button.png"
-            alt="show more button"
+          <img class="show-more-icon" alt="show more button"
           />
         </div>
         <!-- card 3 -->
         <div class="card-3 about-me--card flex hide">
+          <h2 class="fs-600 ff-roboto-cond text-f-light letter-spacing-1 center">The bits I'm good at</h2>
+          <div class="grid-container grid-container--skills">
+            <div class="skill-icon">
+              <img src="./resources/images/skills-icons/css.png" alt="css icon">
+            </div>
+            <div class="skill-icon">
+              <img src="./resources/images/skills-icons/git.png" alt="git icon">
+            </div>
+            <div class="skill-icon">
+              <img src="./resources/images/skills-icons/github.png" alt="github icon">
+            </div>
+            <div class="skill-icon">
+              <img src="./resources/images/skills-icons/html.png" alt="html icon">
+            </div>
+            <div class="skill-icon">
+              <img src="./resources/images/skills-icons/javascript.png" alt="javascript icon">
+            </div>
+            <div class="skill-icon">
+              <img src="./resources/images/skills-icons/vsc.png" alt="visual code studio icon">
+            </div>
+          </div>
           <p class="justify indent fs-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Throughout my study I've collected skills in the above technologies, languages, and programmes. Whilst I can't yet call myself an expert I can say I'm well on my way!
           </p>
         </div>
         <!-- card 4 -->
@@ -193,7 +197,7 @@
         <!-- Project one -->
         <div class="project-container project-one grid">
           <h2 class="project-title fs-600 letter-spacing-1 ff-roboto-cond text-f-dark">Space Tourism</h2>
-          <div class="project-images flex">
+          <div class="project-images flex hidden hidden--right">
             <div class="desktop-image img-container">
               <img
                 src="./resources/images/projects/project-one-desktop.png"
@@ -222,7 +226,7 @@
                     href="#"
                     onclick='window.open("https://github.com/twoconnell/Space-Website");return false;'
                   >
-                    <img src="./resources/images/projects/icons8-github-100.png" class="project-github" alt="Space Website Source" />
+                    <img class="project-github" alt="Space Website Source" />
                   </a>
                 </div>
                 <div class="icon">
@@ -230,15 +234,15 @@
                     href="#"
                     onclick='window.open("https://twoconnell.github.io/Space-Website/");return false;'
                   >
-                    <img src="./resources/images/projects/icons8-internet-100.png" class="project-internet" alt="Space Website" />
+                    <img class="project-internet" alt="Space Website" />
                   </a>
                 </div>
               </div>
         </div>
         <!-- Project two -->
         <div class="project-container project-two grid">
-          <h2 class="project-title fs-600 letter-spacing-1 ff-roboto-cond text-f-dark">Space Tourism</h2>
-          <div class="project-images flex">
+          <h2 class="project-title fs-600 letter-spacing-1 ff-roboto-cond text-f-dark">Todd The Fox Art</h2>
+          <div class="project-images flex hidden hidden--left">
             <div class="mobile-image img-container">
               <img
                 src="./resources/images/projects/project-one-mobile.png"
@@ -254,12 +258,10 @@
             
           </div>
               <p class="project-about  indent justify text-f-dark">
-                <a href="https://www.frontendmentor.io/" target="_blank"
-                  >Frontend Mentor</a
-                > provided the assets and Figma layout files for this challenging
-                space tourism site and I was then on my own to recreate it as
-                accurately as possible. This was a delight to build and is the
-                highlight of my development career so far. This site was built with CSS-3, HTML-5, Vanilla Javascript, and made use of some JSON for content population.
+                I was approached by Todd to build a landing page and general portfolio site to help him expand 
+                his influence digitally. The site is still under construction but makes heavy use of dynamic 
+                content changes on single pages to allow exploration into his artwork. Again, this site was built 
+                primarily with CSS-3, HTML-5, and Vanilla Javascript.
               </p>
 
               <div class="project-icons flex">

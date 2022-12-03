@@ -11,6 +11,12 @@
   --github-icon: url(../images/social-icons/theme1-github.png);
   --linkedin-icon: url(../images/social-icons/theme1-linkedin.png);
 
+  --show-more-icon: url(../images/show-more/show-more-one.png);
+
+  --project-git-icon: url(../images/projects/icons/git-one.png);
+  --project-web-icon: url(../images/projects/icons/web-one.png);
+  
+
   --clr-black: 220 5% 13%;
   --clr-white: 5 26% 92%;
   --clr-accent: 4 27% 64%;
@@ -233,6 +239,51 @@ select {
   color: hsl(var(--clr-accent) / 0.75);
 }
 
+/* Loading Animation Styles */
+
+.hidden {
+  opacity: 0;
+  transition: 
+    filter 1s, 
+    transform 1s, 
+    opacity 1s, 
+    color 1s,
+    background-size 0.5s, 
+    background-color 0.5s, 
+    box-shadow 1s;
+  filter: blur(10px);
+}
+
+.hidden--header {
+  opacity: 0;
+  transition: 
+    filter 1s, 
+    transform 1s, 
+    opacity 1s, 
+    color 1s,
+    background-size 0.5s, 
+    background-color 0.5s, 
+    box-shadow 1s;
+}
+
+.hidden--left {
+  transform: translateX(-90%) translateY(0);
+}
+
+.hidden--right {
+  transform: translateX(90%) translateY(0);
+}
+
+.hidden--bottom {
+  transform: translateX(0) translateY(100%);
+}
+
+.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0) translateY(0);
+}
+
 /* -------------------------------------------------------------------------------------------- */
 /* Cookie Popup                                                                                 */
 /* -------------------------------------------------------------------------------------------- */
@@ -401,6 +452,9 @@ select {
   --email-icon: url(../images/social-icons/theme1-mail.png);
   --github-icon: url(../images/social-icons/theme1-github.png);
   --linkedin-icon: url(../images/social-icons/theme1-linkedin.png);
+  --show-more-icon: url(../images/show-more/show-more-one.png);
+  --project-git-icon: url(../images/projects/icons/git-one.png);
+  --project-web-icon: url(../images/projects/icons/web-one.png);
 }
 
 /* Color theme 2 styles*/
@@ -416,6 +470,9 @@ select {
   --email-icon: url(../images/social-icons/theme2-mail.png);
   --github-icon: url(../images/social-icons/theme2-github.png);
   --linkedin-icon: url(../images/social-icons/theme2-linkedin.png);
+  --show-more-icon: url(../images/show-more/show-more-two.png);
+  --project-git-icon: url(../images/projects/icons/git-two.png);
+  --project-web-icon: url(../images/projects/icons/web-two.png);
 }
 
 /* Color theme 3 styles*/
@@ -431,6 +488,10 @@ select {
   --email-icon: url(../images/social-icons/theme3-mail.png);
   --github-icon: url(../images/social-icons/theme3-github.png);
   --linkedin-icon: url(../images/social-icons/theme3-linkedin.png);
+  --show-more-icon: url(../images/show-more/show-more-three.png);
+  --project-git-icon: url(../images/projects/icons/git-three.png);
+  --project-web-icon: url(../images/projects/icons/web-three.png);
+
 }
 
 /* -------------------------------------------------------------------------------------------- */
@@ -448,6 +509,20 @@ select {
     padding-bottom: 2rem;
 }
 
+.grid-container--skills {
+  align-self: center;
+  grid-template-columns: repeat(2, 40%);
+  gap: 2rem 4rem;
+}
+
+.grid-container--skills > * {
+  transition: 500ms ease-in-out;
+}
+
+.grid-container--skills > *:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
 .card-1 { grid-area: card-1; }
 
 .card-2 { grid-area: card-2; }
@@ -463,6 +538,8 @@ select {
   transition: transform 200ms;
   min-width: 8rem;
 }
+
+.show-more-icon { content: var(--show-more-icon); }
 
 .show-more-button--rotate-mobile {
   transform: rotate(180deg);
@@ -535,7 +612,7 @@ select {
   place-items: center;
   padding-inline: 2rem;
   gap: 5rem;
-  padding-top: 2rem;
+  padding-top: 4rem;
 }
 
 .project-container {
@@ -545,6 +622,7 @@ select {
     'project-icons'
     'project-images'
     'project-about';
+  padding-bottom: 4rem;
 }
 
 .project-title { grid-area: project-title; }
@@ -593,6 +671,9 @@ select {
 .project-icons > .icon {
   width: 40px;
 }
+
+.project-github { content: var(--project-git-icon); }
+.project-internet { content: var(--project-web-icon); }
 
 @media (min-width: 45em) {
   /* .project-icons {

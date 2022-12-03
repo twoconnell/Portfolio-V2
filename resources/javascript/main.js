@@ -50,6 +50,22 @@ function enableScroll() {
 
 disableScroll();
 
+
+// ------------------------------------------------------------------------
+//  Loading Animations
+// ------------------------------------------------------------------------
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+
 // ------------------------------------------------------------------------
 //  Cookie popup
 // ------------------------------------------------------------------------
@@ -72,6 +88,7 @@ cookieNo.addEventListener("click", () => {
 if (document.cookie) {
   cookieBox.classList.add("hide");
   enableScroll();
+// 
 } else {
   cookieBox.classList.remove("hide");
 }
@@ -108,11 +125,13 @@ colorThemes.forEach((themeOption) => {
 
 document.onload = getTheme();
 
+
 // ------------------------------------------------------------------------
 //  Mobile / Tablet / desktop conditional
 // ------------------------------------------------------------------------
 
 var screenSize = document.documentElement.clientWidth || window.innerWidth;
+
 
 // ------------------------------------------------------------------------
 //  About section read more
@@ -179,3 +198,4 @@ showMoreButton.addEventListener("click", () => {
     }
   }
 });
+
