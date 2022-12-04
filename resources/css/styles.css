@@ -748,6 +748,11 @@ a { cursor:crosshair; }
   grid-area: icons;
   gap: 2rem;
 }
+
+.grid-container--footer .icon {
+  width: clamp(40px, 8vw, 60px)
+}
+
 .grid-container--footer > .copyright { grid-area: copyright; }
 
 .grid-container--footer {
